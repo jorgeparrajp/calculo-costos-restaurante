@@ -12,6 +12,7 @@ static void mostrarMenuPrincipal(void) {
 }
 
 int main(void) {
+    enum { OPCION_MINIMA = 1, OPCION_SALIR = 6 };
     Sistema sistema;
     int opcion;
 
@@ -21,7 +22,7 @@ int main(void) {
     do {
         mostrarMenuPrincipal();
 
-        opcion = leerEntero("Opcion: ", 1, 6);
+        opcion = leerEntero("Opcion: ", OPCION_MINIMA, OPCION_SALIR);
 
         switch (opcion) {
             case 1:
@@ -41,14 +42,14 @@ int main(void) {
                 printf("Cambios guardados.\n");
                 pausar();
                 break;
-            case 6:
+            case OPCION_SALIR:
                 if (confirmar("Desea guardar antes de salir")) {
                     guardarDatos(&sistema);
                 }
                 printf("Programa finalizado.\n");
                 break;
         }
-    } while (opcion != 6);
+    } while (opcion != OPCION_SALIR);
 
     return 0;
 }
