@@ -472,9 +472,9 @@ static void registrarPlato(Sistema *sistema) {
 
     leerTexto("Nombre: ", nuevo.nombre, sizeof(nuevo.nombre));
     leerTexto("Categoria: ", nuevo.categoria, sizeof(nuevo.categoria));
-    nuevo.impuesto = leerFloat("Impuesto (0 a 99): ", 0, 99, 1);
-    nuevo.servicio = leerFloat("Servicio (0 a 99): ", 0, 99, 1);
-    nuevo.ganancia = leerFloat("Ganancia (0 a 99): ", 0, 99, 1);
+    nuevo.impuesto = leerFloat("Impuesto (0 a 99): ", 0, PORCENTAJE_MAXIMO, 1);
+    nuevo.servicio = leerFloat("Servicio (0 a 99): ", 0, PORCENTAJE_MAXIMO, 1);
+    nuevo.ganancia = leerFloat("Ganancia (0 a 99): ", 0, PORCENTAJE_MAXIMO, 1);
 
     sistema->platos[sistema->totalPlatos++] = nuevo;
     printf("Plato registrado.\n");
@@ -545,9 +545,9 @@ static void actualizarPlato(Sistema *sistema) {
               sizeof(sistema->platos[pos].nombre));
     leerTexto("Nueva categoria: ", sistema->platos[pos].categoria,
               sizeof(sistema->platos[pos].categoria));
-    sistema->platos[pos].impuesto = leerFloat("Nuevo impuesto: ", 0, 99, 1);
-    sistema->platos[pos].servicio = leerFloat("Nuevo servicio: ", 0, 99, 1);
-    sistema->platos[pos].ganancia = leerFloat("Nueva ganancia: ", 0, 99, 1);
+    sistema->platos[pos].impuesto = leerFloat("Nuevo impuesto: ", 0, PORCENTAJE_MAXIMO, 1);
+    sistema->platos[pos].servicio = leerFloat("Nuevo servicio: ", 0, PORCENTAJE_MAXIMO, 1);
+    sistema->platos[pos].ganancia = leerFloat("Nueva ganancia: ", 0, PORCENTAJE_MAXIMO, 1);
 
     printf("Plato actualizado.\n");
 }
