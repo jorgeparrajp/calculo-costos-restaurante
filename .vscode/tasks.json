@@ -1,0 +1,42 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Compilar restaurante",
+            "type": "shell",
+            "command": "C:\\msys64\\ucrt64\\bin\\gcc.exe",
+            "args": [
+                "-Wall",
+                "-Wextra",
+                "-pedantic",
+                "main.c",
+                "restaurante.c",
+                "-o",
+                "restaurante.exe"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "detail": "Compila el proyecto completo con main.c y restaurante.c"
+        },
+        {
+            "label": "Ejecutar restaurante",
+            "type": "shell",
+            "command": ".\\restaurante.exe",
+            "dependsOn": "Compilar restaurante",
+            "group": "test",
+            "problemMatcher": [],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "detail": "Compila y ejecuta el programa"
+        }
+    ]
+}
