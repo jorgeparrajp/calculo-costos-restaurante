@@ -10,6 +10,9 @@
 #define ARCHIVO_RELACIONES "plato_ingredientes.csv"
 #define MAX_LINEA 256
 
+#define COSTO_MAXIMO 1000000.0f
+#define PORCENTAJE_MAXIMO 99.0f
+
 /* ---------- Entrada segura ---------- */
 
 static void quitarSalto(char *texto) {
@@ -329,7 +332,7 @@ static void registrarIngrediente(Sistema *sistema) {
     }
 
     leerTexto("Nombre: ", nuevo.nombre, sizeof(nuevo.nombre));
-    nuevo.costoUnitario = leerFloat("Costo unitario (> 0): ", 0, 1000000, 0);
+    nuevo.costoUnitario = leerFloat("Costo unitario (> 0): ", 0, COSTO_MAXIMO, 0);
     leerTexto("Unidad de medida: ", nuevo.unidadMedida, sizeof(nuevo.unidadMedida));
 
     sistema->ingredientes[sistema->totalIngredientes++] = nuevo;
@@ -392,7 +395,7 @@ static void actualizarIngrediente(Sistema *sistema) {
     leerTexto("Nuevo nombre: ", sistema->ingredientes[pos].nombre,
               sizeof(sistema->ingredientes[pos].nombre));
     sistema->ingredientes[pos].costoUnitario =
-        leerFloat("Nuevo costo (> 0): ", 0, 1000000, 0);
+        leerFloat("Nuevo costo (> 0): ", 0, COSTO_MAXIMO, 0);
     leerTexto("Nueva unidad: ", sistema->ingredientes[pos].unidadMedida,
               sizeof(sistema->ingredientes[pos].unidadMedida));
 
@@ -637,7 +640,7 @@ static void asociarIngrediente(Sistema *sistema) {
         return;
     }
 
-    nueva.cantidadUsada = leerFloat("Cantidad usada (> 0): ", 0, 1000000, 0);
+    nueva.cantidadUsada = leerFloat("Cantidad usada (> 0): ", 0, COSTO_MAXIMO, 0);
     sistema->relaciones[sistema->totalRelaciones++] = nueva;
 
     printf("Ingrediente asociado al plato.\n");
@@ -697,7 +700,7 @@ static void actualizarCantidad(Sistema *sistema) {
     }
 
     sistema->relaciones[pos].cantidadUsada =
-        leerFloat("Nueva cantidad (> 0): ", 0, 1000000, 0);
+        leerFloat("Nueva cantidad (> 0): ", 0, COSTO_MAXIMO, 0);
 
     printf("Cantidad actualizada.\n");
 }
