@@ -1,6 +1,7 @@
 #ifndef RESTAURANTE_H
 #define RESTAURANTE_H
 
+/* Limites principales del sistema. */
 #define MAX_INGREDIENTES 100
 #define MAX_PLATOS 100
 #define MAX_RELACIONES 500
