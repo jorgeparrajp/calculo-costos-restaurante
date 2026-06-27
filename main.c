@@ -1,5 +1,17 @@
 #include <stdio.h>
-#include "restaurante.h"`r`n`r`nstatic void mostrarMenuPrincipal(void) {`r`n    printf("\n===== COSTOS DE RESTAURANTE =====\n");`r`n    printf("1. Gestion de ingredientes\n");`r`n    printf("2. Gestion de platos\n");`r`n    printf("3. Ingredientes por plato\n");`r`n    printf("4. Calculos y reportes\n");`r`n    printf("5. Guardar cambios\n");`r`n    printf("6. Salir\n");`r`n}`r`n`r`nint main(void) {
+#include "restaurante.h"
+
+static void mostrarMenuPrincipal(void) {
+    printf("\n===== COSTOS DE RESTAURANTE =====\n");
+    printf("1. Gestion de ingredientes\n");
+    printf("2. Gestion de platos\n");
+    printf("3. Ingredientes por plato\n");
+    printf("4. Calculos y reportes\n");
+    printf("5. Guardar cambios\n");
+    printf("6. Salir\n");
+}
+
+int main(void) {
     Sistema sistema;
     int opcion;
 
