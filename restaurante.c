@@ -211,7 +211,9 @@ static float costoIngredientes(const Sistema *sistema, const char *codigoPlato) 
 static float costoFinal(const Sistema *sistema, const Plato *plato) {
     float base = costoIngredientes(sistema, plato->codigo);
     float porcentajes = plato->impuesto + plato->servicio + plato->ganancia;
-    return base + base * porcentajes / 100.0f;
+    float recargos = base * porcentajes / 100.0f;
+
+    return base + recargos;
 }
 
 /* ---------- Archivos CSV ---------- */
