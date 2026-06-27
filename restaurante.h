@@ -9,6 +9,7 @@
 #define MAX_NOMBRE 60
 #define MAX_TEXTO 40
 
+/* Modelos de datos usados por el programa. */
 typedef struct {
     char codigo[MAX_CODIGO];
     char nombre[MAX_NOMBRE];
@@ -16,6 +17,7 @@ typedef struct {
     char unidadMedida[MAX_TEXTO];
 } Ingrediente;
 
+/* Modelos de datos usados por el programa. */
 typedef struct {
     char codigo[MAX_CODIGO];
     char nombre[MAX_NOMBRE];
